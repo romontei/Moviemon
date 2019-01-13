@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% load staticfiles %} {% block title %}
+<title>MovieMon: Moviedex</title>
+{%endblock%} {% block content %}
+<div style="text-align: center;">
+  <p>Moviedex</p>
+  <div class="moviedex-container">
+    <img height="180"
+         src={{movie.Poster}};/>
+    <p>{{movie.Title}}</p>
+    <p>{{movie.Director}}</p>
+    <p>{{movie.Year}}</p>
+    <p>{{movie.Plot}}</p>
+    <p>{{movie.Actors}}</p>
+    <p>{{movie.imdbRating}}</p>
+  </div>
+</div>
+
+<div class="button-description">
+  <div>B - Back</div>
+</div>
+{% endblock %}

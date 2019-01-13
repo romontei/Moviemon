@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+{% load staticfiles %}
+<title>MovieMon: load</title>
+{%endblock%}
+
+{% block content %}
+<div id="option">
+  {% block test %}
+    <h2>Load Game</h2>
+    {% endblock %}
+    <div id="option2">
+        <ul>
+            {% for key, val in caugh.items %}
+            <li
+         {% if selected == key %}
+        id=li_selected
+         {% endif %}
+                >
+                SLOT {{key}}:
+                {% if val is not None %}
+                {{val}}
+                {%else%}
+                FREE
+                {%endif%}
+            </li>
+            {% endfor %}
+        </ul>
+        {% block dipcmd %}
+        {% endblock %}
+        {% if message is not None %}
+        <p>{{message}}</p>
+        {% endif %}
+    </div>
+    <div class="button-description">
+      <div> {{isLoad}}</div>
+      <div>B - Cancel</div>
+    </div>
+</div>
+{% endblock %}

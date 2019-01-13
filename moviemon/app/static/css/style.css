@@ -1,0 +1,298 @@
+@font-face {
+  font-family: gb;
+  src: url(early_gameboy-webfont.woff);
+}
+
+.display-screen {
+  background-color: #d7e894;
+  width: 80%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+body {
+  color: #204631;
+  font-family: gb;
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-menu {
+  width: 200px;
+}
+
+.opac {
+  opacity: 0.2;
+}
+
+#li_selected {
+  color: red;
+}
+
+.content {
+  display: flex;
+  height: 70%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+table {
+  background-size: cover;
+}
+
+.character {
+  width: 1.5em;
+  height: 1.5em;
+  background-size: contain;
+}
+
+.worldmap {
+  position: absolute;
+  bottom: 1em;
+}
+
+.map {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.bloc {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.gameboy {
+  display: flex;
+  flex-flow: column;
+  width: 25em;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 625px;
+  height: 1000px;
+  background: #eee;
+  border-radius: 10px 10px 60px 10px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gs-ball {
+  width: 1em;
+  height: 1em;
+}
+
+.ball-count {
+  display: flex;
+  height: 1em;
+  margin: 1em;
+  overflow: hidden;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.screen-zone {
+  width: 35em;
+  height: 35em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 1em;
+}
+
+.map-popup {
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.moviedex-list {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  font-size: 0.5em;
+  flex-direction: row;
+}
+
+.cover-list {
+  padding: 0 1em;
+  height: 10em;
+}
+
+.moviedex-container {
+  font-size: 0.5em;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * *
+ * * * * NOTE: CSS for 'commands.html' file
+ * * * * * * * * * * * * * * * * * * * * * */
+
+.commands {
+  height: 30%;
+}
+
+.buttons-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.upper-buttons, .bottom-buttons {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/**
+ * Direction cross
+ */
+
+.cross-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 9em;
+  height: 9em;
+}
+
+.horizon {
+  display: flex;
+  position: absolute;
+  width: 90%;
+  height: 30%;
+  background: #444;
+  border-radius: 5px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.vertic {
+  display: flex;
+  position: absolute;
+  width: 30%;
+  height: 90%;
+  background: #444;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.round {
+  z-index: 1;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #353535;
+  border-radius: 100%;
+}
+
+.arrow-h {
+  cursor: pointer;
+  width: 35%;
+  height: 100%;
+}
+
+.arrow-v {
+  cursor: pointer;
+  width: 100%;
+  height: 40%;
+}
+
+.arrow-h:hover, .arrow-v:hover {
+  background-color: #292727;
+}
+
+/**
+ * Action buttons
+ */
+
+.action-buttons {
+  display: flex;
+  width: 11em;
+  justify-content: space-between;
+}
+
+.button {
+  transition: ease-in-out .3s;
+  color: white;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 100%;
+  border: 1px solid rgba(68, 32, 54, 1);
+  background-image: -webkit-linear-gradient( 6deg, rgba(255, 0, 0, 0.6), #A7163F 89%);
+  background-image: linear-gradient( 6deg, rgba(255, 0, 0, 0.6), #A7163F 89%);
+  box-shadow: inset 1px 2px 4px #A87493, -1px -1px 2px #000000, 3px 6px 7px rgba(125, 136, 134, 0.79);
+}
+
+.button:hover {
+  transition: ease-in-out .3s;
+  box-shadow: inset 0px 0px 0px #A87493, -1px -1px 2px #000000, 0px 0px 0px rgba(125, 136, 134, 0.79);
+}
+
+.btnss {
+  display: flex;
+  height: 100%;
+  color: #444444;
+  border-radius: 1em;
+  align-items: center;
+  padding: 0.1em 0.4em;
+  text-decoration: none;
+  font-family: monospace;
+  justify-content: center;
+  background-image: linear-gradient(269deg, #6F7875, #9B9B9B 71%);
+  background-image: -webkit-linear-gradient(269deg, #6F7875, #9B9B9B 71%);
+  box-shadow: inset 0px 0px 0px #CECECE, 0px -1px 1px #5d5d5d, 0px 4px 4px rgba(122, 122, 122, 0.8)
+}
+
+.ball-map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.button-description {
+  display: flex;
+  height: 5em;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.shaking {
+   /* Start the shake animation and make the animation last for 0.5 seconds */
+   animation: shake 0.4s;
+   /* When the animation is finished, start again */
+   /* animation-iteration-count: infinite; */
+}
+
+@keyframes shake {
+   0% { transform: translate(1px, 1px) rotate(0deg); }
+   10% { transform: translate(-1px, -2px) rotate(-1deg); }
+   20% { transform: translate(-3px, 0px) rotate(1deg); }
+   30% { transform: translate(3px, 2px) rotate(0deg); }
+   40% { transform: translate(1px, -1px) rotate(1deg); }
+   50% { transform: translate(-1px, 2px) rotate(-1deg); }
+   60% { transform: translate(-3px, 1px) rotate(0deg); }
+   70% { transform: translate(3px, 1px) rotate(-1deg); }
+   80% { transform: translate(-1px, -1px) rotate(1deg); }
+   90% { transform: translate(1px, 2px) rotate(0deg); }
+   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

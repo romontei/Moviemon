@@ -1,0 +1,93 @@
+<!-- Commands template -->
+<div class=commands>
+
+  <!-- Holds the buttons container -->
+  <div class="buttons-container">
+
+    <!-- Holds the dpad and th action button -->
+    <div class="upper-buttons">
+
+      <!-- Holds a simple dpad -->
+      <div class="cross-container">
+        <div class="vertic">
+          <a class="arrow-v btn_up"
+             href="{{commands.btn_up}}"></a>
+          <a class="arrow-v btn_dwn"
+             href="{{commands.btn_dwn}}"></a>
+        </div>
+        <div class="round"></div>
+        <div class="horizon">
+          <a class="arrow-h btn_lft"
+             href="{{commands.btn_lft}}"></a>
+          <a class="arrow-h btn_rgt"
+             href="{{commands.btn_rgt}}"></a>
+        </div>
+      </div>
+
+      <!-- Holds A and B action buttons -->
+      <div class="action-buttons">
+        <a class="btn_b"
+           href="{{commands.btn_b}}"><button class="button">B</button></a>
+        <a class="btn_a"
+           href="{{commands.btn_a}}"><button class="button">A</button></a>
+      </div>
+    </div>
+
+    <!-- Holds the start and select button -->
+    <div class="bottom-buttons">
+      <a class="btn_start btnss"
+         href="{{commands.btn_start}}">   start  </a>
+      <a class="btn_select btnss"
+         href="{{commands.btn_select}}">  select </a>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- JavaScript part for bonus, handle the keypress to play the game -->
+<!--  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+<script type="text/javascript">
+  document.addEventListener("keydown", function(event)
+  {
+    var up = "{{commands.btn_up}}";
+    var dwn = "{{commands.btn_dwn}}";
+    var lft = "{{commands.btn_lft}}";
+    var rgt = "{{commands.btn_rgt}}";
+    var a = "{{commands.btn_a}}";
+    var b = "{{commands.btn_b}}";
+    var select = "{{commands.btn_select}}";
+    var start = "{{commands.btn_start}}";
+    var key = event.keyCode;
+    switch (key)
+    {
+      case 37:
+        window.location.replace(lft);
+        break;
+      case 38:
+        window.location.replace(up);
+        break;
+      case 39:
+        window.location.replace(rgt);
+        break;
+      case 40:
+        window.location.replace(dwn);
+        break;
+      case 65:
+        window.location.replace(a);
+        break;
+      case 66:
+        window.location.replace(b);
+        break;
+      case 13:
+        window.location.replace(start);
+        break;
+      case 16:
+        window.location.replace(select);
+        break;
+    }
+  });
+</script>

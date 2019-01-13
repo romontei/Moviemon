@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% load staticfiles %} {% block title %}
+<title>MovieMon: Worldmap</title>
+{%endblock%} {% block content %}
+
+<div class="worldmap">
+
+  <table class="map"
+         background="{% static 'img/terrain_map.jpg' %}">
+
+    <div id=ballnum
+         class="ball-count">
+      <img class="gs-ball"
+           src="{% static 'img/gsball.png' %}">: {{balls}} </div>
+
+    {% for y in grid_size.1 %}
+    <tr>
+      {% for x in grid_size.0 %}
+      <td class="bloc">
+
+        {% if movid_position.0 == x and movid_position.1 == y %}
+        <div class="character"
+             style="background-image: url({% static 'img/movid.png' %}); background-repeat:no-repeat;">
+        </div>
+
+        {% elif ball_position.0 == x and ball_position.1 == y %}
+        <div class="ball-map-container">
+          <div class="character"
+               style="background-image: url({% static 'img/ball-svg.png' %}); font-size: 0.5em;">
+           </div>
+        </div>
+
+        {% elif ply_position.0 == x and ply_position.1 == y %}
+        <div class="character"
+             style="background-image: url({% static 'img/rai.png' %})">
+        </div>
+
+
+        {% endif %}
+
+
+      </td>
+
+    </div>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% if message is not None %}
+<p id=message class="map-popup">{{message}}</p>
+{% endif %} {%endblock%}

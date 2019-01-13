@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset=UTF-8 /> {% block title %}
+    <title>MovieMon</title>
+    {%endblock%}
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+  </head>
+
+  <body>
+
+    <div class="gameboy">
+      <div id=content
+           class="content">
+        <div class="screen-zone">
+          <div class="display-screen">
+            {% block content%} {%endblock%}
+          </div>
+        </div>
+    </div>
+    {% include "commands.html" %}
+    </div>
+
+  </body>
+
+</html>

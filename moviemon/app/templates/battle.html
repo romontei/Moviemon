@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+<title>MovieMon: Battle</title>
+{% if disable_a is not None %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/disable_a.css' %}" />
+        {% endif %}
+{%endblock%}
+
+{% block content %}
+<ul>
+    <li id=balls>Balls: {{balls}}</li>
+    <li id=str>Player strength: {{strength}}</li>
+    <li id=str>movie strength: {{strength_movie}}</li>
+    <li id=balls>Capture Rate: {{rate}}%</li>
+</ul>
+<img {% if catchFailed %} class="shaking" {% endif%}src={{img}} />
+{% if cmd_a is not None %}
+<p>{{cmd_a}}<p>
+{% endif%}
+<p> press B to go back to Map</p>
+{% if message is not None %}
+<p>{{message}}<p>
+{% endif%}
+{% endblock %}
